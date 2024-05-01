@@ -3,6 +3,7 @@ import { ref } from 'vue'
 
 export class Store {
   public categories: Category[] = []
+  public title: string = 'TODO'
 
   public get len() {
     return this.categories.reduce((total, cat) => total + cat.len, 0)
@@ -38,6 +39,6 @@ export class ToDo {
 export const useToDoStore = defineStore('toDo', () => {
   const data = ref(new Store())
 
-  return data
+  return {data}
 })
 
